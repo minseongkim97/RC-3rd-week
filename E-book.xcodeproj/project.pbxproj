@@ -20,6 +20,10 @@
 		246E2CD72692F44300C4F7C2 /* ReadingBooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246E2CD62692F44300C4F7C2 /* ReadingBooksView.swift */; };
 		246E2CD92692F45700C4F7C2 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246E2CD82692F45700C4F7C2 /* LibraryView.swift */; };
 		246E2CDB2692F46100C4F7C2 /* AllBooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246E2CDA2692F46100C4F7C2 /* AllBooksView.swift */; };
+		246E2CE626933FB900C4F7C2 /* LibraryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246E2CE426933FB900C4F7C2 /* LibraryTableViewCell.swift */; };
+		246E2CE726933FB900C4F7C2 /* LibraryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 246E2CE526933FB900C4F7C2 /* LibraryTableViewCell.xib */; };
+		246E2CE92693539D00C4F7C2 /* EachLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246E2CE82693539D00C4F7C2 /* EachLibraryViewController.swift */; };
+		246E2CEB2693546000C4F7C2 /* EachLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246E2CEA2693546000C4F7C2 /* EachLibraryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +42,10 @@
 		246E2CD62692F44300C4F7C2 /* ReadingBooksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingBooksView.swift; sourceTree = "<group>"; };
 		246E2CD82692F45700C4F7C2 /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		246E2CDA2692F46100C4F7C2 /* AllBooksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllBooksView.swift; sourceTree = "<group>"; };
+		246E2CE426933FB900C4F7C2 /* LibraryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryTableViewCell.swift; sourceTree = "<group>"; };
+		246E2CE526933FB900C4F7C2 /* LibraryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LibraryTableViewCell.xib; sourceTree = "<group>"; };
+		246E2CE82693539D00C4F7C2 /* EachLibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EachLibraryViewController.swift; sourceTree = "<group>"; };
+		246E2CEA2693546000C4F7C2 /* EachLibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EachLibraryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,22 +78,74 @@
 		246E2CB92692C44700C4F7C2 /* E-book */ = {
 			isa = PBXGroup;
 			children = (
+				246E2CDC2693343D00C4F7C2 /* Common */,
+				246E2CDD2693345200C4F7C2 /* Storyboard */,
+				246E2CDF269334B100C4F7C2 /* Module */,
+				246E2CC32692C44800C4F7C2 /* Assets.xcassets */,
+			);
+			path = "E-book";
+			sourceTree = "<group>";
+		};
+		246E2CDC2693343D00C4F7C2 /* Common */ = {
+			isa = PBXGroup;
+			children = (
 				246E2CBA2692C44700C4F7C2 /* AppDelegate.swift */,
 				246E2CBC2692C44700C4F7C2 /* SceneDelegate.swift */,
+				246E2CC82692C44800C4F7C2 /* Info.plist */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		246E2CDD2693345200C4F7C2 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				246E2CC02692C44700C4F7C2 /* Main.storyboard */,
+				246E2CC52692C44800C4F7C2 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		246E2CDF269334B100C4F7C2 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				246E2CE0269334B800C4F7C2 /* Model */,
+				246E2CE2269334C800C4F7C2 /* View */,
+				246E2CE3269334CD00C4F7C2 /* Controller */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		246E2CE0269334B800C4F7C2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				246E2CCE2692C49200C4F7C2 /* CustomSegmentedControl.swift */,
+				246E2CD42692D9E000C4F7C2 /* Book.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		246E2CE2269334C800C4F7C2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				246E2CD12692CB5400C4F7C2 /* BookTableViewCell.xib */,
+				246E2CE526933FB900C4F7C2 /* LibraryTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		246E2CE3269334CD00C4F7C2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
 				246E2CBE2692C44700C4F7C2 /* ViewController.swift */,
+				246E2CE82693539D00C4F7C2 /* EachLibraryViewController.swift */,
 				246E2CD62692F44300C4F7C2 /* ReadingBooksView.swift */,
 				246E2CD82692F45700C4F7C2 /* LibraryView.swift */,
 				246E2CDA2692F46100C4F7C2 /* AllBooksView.swift */,
-				246E2CD42692D9E000C4F7C2 /* Book.swift */,
-				246E2CCE2692C49200C4F7C2 /* CustomSegmentedControl.swift */,
-				246E2CC02692C44700C4F7C2 /* Main.storyboard */,
+				246E2CEA2693546000C4F7C2 /* EachLibraryView.swift */,
 				246E2CD02692CB5400C4F7C2 /* BookTableViewCell.swift */,
-				246E2CD12692CB5400C4F7C2 /* BookTableViewCell.xib */,
-				246E2CC32692C44800C4F7C2 /* Assets.xcassets */,
-				246E2CC52692C44800C4F7C2 /* LaunchScreen.storyboard */,
-				246E2CC82692C44800C4F7C2 /* Info.plist */,
+				246E2CE426933FB900C4F7C2 /* LibraryTableViewCell.swift */,
 			);
-			path = "E-book";
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,6 +207,7 @@
 			files = (
 				246E2CD32692CB5400C4F7C2 /* BookTableViewCell.xib in Resources */,
 				246E2CC72692C44800C4F7C2 /* LaunchScreen.storyboard in Resources */,
+				246E2CE726933FB900C4F7C2 /* LibraryTableViewCell.xib in Resources */,
 				246E2CC42692C44800C4F7C2 /* Assets.xcassets in Resources */,
 				246E2CC22692C44700C4F7C2 /* Main.storyboard in Resources */,
 			);
@@ -160,12 +221,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				246E2CCF2692C49200C4F7C2 /* CustomSegmentedControl.swift in Sources */,
+				246E2CEB2693546000C4F7C2 /* EachLibraryView.swift in Sources */,
+				246E2CE92693539D00C4F7C2 /* EachLibraryViewController.swift in Sources */,
 				246E2CBF2692C44700C4F7C2 /* ViewController.swift in Sources */,
 				246E2CDB2692F46100C4F7C2 /* AllBooksView.swift in Sources */,
 				246E2CD52692D9E000C4F7C2 /* Book.swift in Sources */,
 				246E2CBB2692C44700C4F7C2 /* AppDelegate.swift in Sources */,
 				246E2CD92692F45700C4F7C2 /* LibraryView.swift in Sources */,
 				246E2CD22692CB5400C4F7C2 /* BookTableViewCell.swift in Sources */,
+				246E2CE626933FB900C4F7C2 /* LibraryTableViewCell.swift in Sources */,
 				246E2CD72692F44300C4F7C2 /* ReadingBooksView.swift in Sources */,
 				246E2CBD2692C44700C4F7C2 /* SceneDelegate.swift in Sources */,
 			);
@@ -315,7 +379,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "E-book/Info.plist";
+				INFOPLIST_FILE = "E-book/Common/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -333,7 +397,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "E-book/Info.plist";
+				INFOPLIST_FILE = "E-book/Common/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
