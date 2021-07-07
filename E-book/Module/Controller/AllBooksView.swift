@@ -7,10 +7,15 @@
 
 import UIKit
 
+protocol AllBooksViewDelegate: AnyObject {
+    func moveVCFromAllBooksView(to content: Int)
+}
+
 class AllBooksView: UIView {
 
     
     static let shared = AllBooksView()
+    weak var delegate: AllBooksViewDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -66,7 +71,7 @@ extension AllBooksView: UITableViewDataSource {
 extension AllBooksView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-
+        delegate?.moveVCFromAllBooksView(to: indexPath.row)
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

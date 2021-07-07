@@ -11,7 +11,7 @@ public struct Book {
     var image: UIImage? = UIImage(systemName: "book") ?? nil
     var title: String
     var writer: String
-    var category: String
+    var category: [String]
 }
 
 

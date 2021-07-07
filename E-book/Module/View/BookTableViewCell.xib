@@ -38,19 +38,10 @@
                                 <color key="textColor" systemColor="systemGray2Color"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="MyJ-69-Mud">
-                                <rect key="frame" x="125" y="126" width="135" height="4"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="135" id="nEq-Hj-4Q8"/>
-                                </constraints>
-                            </progressView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="MyJ-69-Mud" firstAttribute="bottom" secondItem="RvM-MF-fPg" secondAttribute="bottom" id="0EH-Z7-XpP"/>
                             <constraint firstItem="RvM-MF-fPg" firstAttribute="leading" secondItem="x8D-er-5fh" secondAttribute="leading" constant="20" id="0Zy-it-2qy"/>
-                            <constraint firstItem="MyJ-69-Mud" firstAttribute="leading" secondItem="RvM-MF-fPg" secondAttribute="trailing" constant="25" id="8eT-7v-EHu"/>
                             <constraint firstItem="Idm-tl-wWM" firstAttribute="leading" secondItem="RvM-MF-fPg" secondAttribute="trailing" constant="25" id="Dms-fK-21q"/>
                             <constraint firstItem="RvM-MF-fPg" firstAttribute="top" secondItem="x8D-er-5fh" secondAttribute="top" constant="20" id="LTR-6c-IYE"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Idm-tl-wWM" secondAttribute="trailing" constant="20" id="QuG-sF-g4q"/>
@@ -72,11 +63,10 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="bookImage" destination="RvM-MF-fPg" id="c0F-qa-RwF"/>
-                <outlet property="progressBar" destination="MyJ-69-Mud" id="sCj-Yw-TkK"/>
                 <outlet property="titleLabel" destination="Idm-tl-wWM" id="Wz5-cf-PjR"/>
                 <outlet property="writerLabel" destination="vpL-uW-k2U" id="hVb-m7-CoG"/>
             </connections>
-            <point key="canvasLocation" x="136.95652173913044" y="121.875"/>
+            <point key="canvasLocation" x="153" y="121"/>
         </tableViewCell>
     </objects>
     <resources>

@@ -12,7 +12,6 @@ class EachLibraryView: UIView {
     static let shared = EachLibraryView()
    
     
-   
     override init(frame: CGRect) {
         super.init(frame: frame)
         tableView.delegate = self
@@ -69,7 +68,7 @@ extension EachLibraryView: UITableViewDataSource {
 extension EachLibraryView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        print(categoryBook)
+        
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

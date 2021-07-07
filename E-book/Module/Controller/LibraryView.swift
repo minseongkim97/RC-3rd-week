@@ -62,7 +62,6 @@ extension LibraryView: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "libraryCell", for: indexPath) as! LibraryTableViewCell
 
         cell.nameLabel.text = getLibrary[indexPath.row]
-        cell.numLabel.text = String(getLibrary.count)
         cell.backgroundImage.image = libraryImage[indexPath.row % (libraryImage.count)]
         
         return cell
@@ -77,7 +76,15 @@ extension LibraryView: UITableViewDelegate {
         
         tableView.deselectRow(at: indexPath, animated: true)
         
+        categoryBook.removeAll()
+        for book in allBooks {
+            if book.category.contains(getLibrary[indexPath.row]) {
+                categoryBook.append(book)
+            }
+        }
+        
         delegate?.moveVC(to: getLibrary[indexPath.row])
+        
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

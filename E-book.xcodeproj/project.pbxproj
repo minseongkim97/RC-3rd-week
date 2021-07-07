@@ -24,6 +24,7 @@
 		246E2CE726933FB900C4F7C2 /* LibraryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 246E2CE526933FB900C4F7C2 /* LibraryTableViewCell.xib */; };
 		246E2CE92693539D00C4F7C2 /* EachLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246E2CE82693539D00C4F7C2 /* EachLibraryViewController.swift */; };
 		246E2CEB2693546000C4F7C2 /* EachLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246E2CEA2693546000C4F7C2 /* EachLibraryView.swift */; };
+		246E2CF326945A2700C4F7C2 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246E2CF226945A2700C4F7C2 /* ContentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		246E2CE526933FB900C4F7C2 /* LibraryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LibraryTableViewCell.xib; sourceTree = "<group>"; };
 		246E2CE82693539D00C4F7C2 /* EachLibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EachLibraryViewController.swift; sourceTree = "<group>"; };
 		246E2CEA2693546000C4F7C2 /* EachLibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EachLibraryView.swift; sourceTree = "<group>"; };
+		246E2CF226945A2700C4F7C2 /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +120,6 @@
 		246E2CE0269334B800C4F7C2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				246E2CCE2692C49200C4F7C2 /* CustomSegmentedControl.swift */,
 				246E2CD42692D9E000C4F7C2 /* Book.swift */,
 			);
 			path = Model;
@@ -136,8 +137,10 @@
 		246E2CE3269334CD00C4F7C2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				246E2CCE2692C49200C4F7C2 /* CustomSegmentedControl.swift */,
 				246E2CBE2692C44700C4F7C2 /* ViewController.swift */,
 				246E2CE82693539D00C4F7C2 /* EachLibraryViewController.swift */,
+				246E2CF226945A2700C4F7C2 /* ContentViewController.swift */,
 				246E2CD62692F44300C4F7C2 /* ReadingBooksView.swift */,
 				246E2CD82692F45700C4F7C2 /* LibraryView.swift */,
 				246E2CDA2692F46100C4F7C2 /* AllBooksView.swift */,
@@ -225,6 +228,7 @@
 				246E2CE92693539D00C4F7C2 /* EachLibraryViewController.swift in Sources */,
 				246E2CBF2692C44700C4F7C2 /* ViewController.swift in Sources */,
 				246E2CDB2692F46100C4F7C2 /* AllBooksView.swift in Sources */,
+				246E2CF326945A2700C4F7C2 /* ContentViewController.swift in Sources */,
 				246E2CD52692D9E000C4F7C2 /* Book.swift in Sources */,
 				246E2CBB2692C44700C4F7C2 /* AppDelegate.swift in Sources */,
 				246E2CD92692F45700C4F7C2 /* LibraryView.swift in Sources */,

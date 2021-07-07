@@ -11,6 +11,8 @@ class EachLibraryViewController: UIViewController {
     
     @IBOutlet weak var categoryName: UILabel!
     @IBOutlet weak var categoryView: UIView!
+    @IBOutlet weak var numLabel: UILabel!
+    
     var eachLibraryView = EachLibraryView.shared
     
     override func viewDidLoad() {
@@ -30,6 +32,7 @@ class EachLibraryViewController: UIViewController {
         super.viewWillAppear(animated)
         
         categoryName.text = eachCategoryVCName
+        numLabel.text = "보유한 책 \(categoryBook.count)권"
     }
     @IBAction func backButtonPressed(_ sender: UIButton) {
         dismiss(animated: true)

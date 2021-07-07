@@ -9,7 +9,7 @@ import UIKit
 
 class BookTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var progressBar: UIProgressView!
+  
     @IBOutlet weak var writerLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var bookImage: UIImageView!
