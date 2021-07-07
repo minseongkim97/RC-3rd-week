@@ -17,6 +17,8 @@ public var allBooks: [Book] = [
 public var getLibrary: [String] = ["기본 책장", "FAVORITE"]
 public var readingBooks: [Book] = []
 public var viewIndex: Int = 0
+public var clickedBook: String = ""
+
 //MARK: - Public Property
 var readingBooksView = ReadingBooksView.shared
 var allBooksView = AllBooksView.shared
@@ -123,15 +125,17 @@ class ViewController: UIViewController, CustomSegmentedControlDelegate, LibraryV
         
         alert.addAction(UIAlertAction(title: "책 읽기", style: .default, handler: { _ in
             
-         
+        
+            
             let contentvc = self.storyboard?.instantiateViewController(withIdentifier: "ContentViewController") as! ContentViewController
             contentvc.modalPresentationStyle = .fullScreen
             self.present(contentvc, animated: true)
 
+            if !readingBooks.contains(where: {$0.title == allBooks[content].title}) {
+                readingBooks.append(allBooks[content])
+                readingBooksView.tableView.reloadData()
+            }
             
-        
-            readingBooks.append(allBooks[content])
-            readingBooksView.tableView.reloadData()
     
         }))
         
@@ -150,7 +154,15 @@ class ViewController: UIViewController, CustomSegmentedControlDelegate, LibraryV
         }))
         
         alert.addAction(UIAlertAction(title: "삭제", style: .destructive, handler: { _ in
+            
+            readingBooks.removeAll(where: {$0.title == allBooks[content].title})
             allBooks.remove(at: content)
+
+            print(readingBooks)
+            readingBooksView.tableView.reloadData()
+            
+        
+            
             DispatchQueue.main.async {
                 self.numLabel.text = "보유한 책 \(allBooks.count)권"
                 allBooksView.tableView.reloadData()
