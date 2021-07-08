@@ -12,7 +12,12 @@ class IntroduceBookTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var writerLabel: UILabel!
     @IBOutlet weak var bookImage: UIImageView!
-    @IBOutlet weak var introduceLabel: UILabel!
+    @IBOutlet weak var introduceLabel: UILabel! {
+        didSet {
+            self.introduceLabel.layer.masksToBounds = true
+            self.introduceLabel.layer.cornerRadius = 4
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,5 +31,6 @@ class IntroduceBookTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+
     
 }

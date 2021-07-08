@@ -13,7 +13,7 @@ public struct Book {
     var title: String
     var writer: String
     var category: [String]
-    
+    var introduce: String
 
 }
 

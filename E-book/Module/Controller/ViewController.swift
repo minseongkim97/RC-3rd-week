@@ -29,9 +29,12 @@ public var bookContent: [String:String] = [
         스위프트에는 함수형과 프로토콜 지향 프로그래밍 기법이 포함되어 있다. 이 책은 이 두 가지 패러다임에 맞춰 스위프트로 프로그래밍하는 방법을 설명한다. 스위프트 문법과 프로그래밍 패러다임을 함께 이 해하고 싶다면 이 책은 큰 도움이 될 것이다.
         """
 ]
+public var introduceContent: [String:String] = [
+    "민법 강의":""
+]
 public var allBooks: [Book] = [
-    Book(image: (UIImage(named: "do it")), title: "Do it! iOS 입문 개발자를 위한 아이폰 앱 프로그래밍", writer: "소영섭, 허성연", category: ["기본 책장"]),
-    Book(image: UIImage(named: "swift"), title: "스위프트 프로그래밍", writer: "야곰", category: ["FAVORITE"])
+    Book(image: (UIImage(named: "do it")), title: "Do it! iOS 입문 개발자를 위한 아이폰 앱 프로그래밍", writer: "소영섭, 허성연", category: ["기본 책장"], introduce: ""),
+    Book(image: UIImage(named: "swift"), title: "스위프트 프로그래밍", writer: "야곰", category: ["FAVORITE"], introduce: "")
 ]
 public var getLibrary: [String] = ["기본 책장", "FAVORITE"]
 public var readingBooks: [Book] = []
@@ -48,7 +51,7 @@ public var categoryBook: [Book] = []
 public var eachCategoryVCName: String = ""
 
 
-class ViewController: UIViewController, CustomSegmentedControlDelegate, LibraryViewDelegate, AllBooksViewDelegate, ReadingBooksViewDelegate  {
+class ViewController: UIViewController, CustomSegmentedControlDelegate, LibraryViewDelegate, AllBooksViewDelegate, ReadingBooksViewDelegate, IntroduceBooksViewDelegate  {
     
     
     //MARK: - Property
@@ -77,6 +80,7 @@ class ViewController: UIViewController, CustomSegmentedControlDelegate, LibraryV
         libraryView.delegate = self
         readingBooksView.delegate = self
         allBooksView.delegate = self
+        introduceView.delegate = self
         
         let codeSegmented = CustomSegmentedControl(frame: CGRect(x: 0, y: 110, width: self.view.frame.width, height: 50), buttonTitle: ["읽고 있는 책","책장","모든 책", "책 소개글"])
         codeSegmented.delegate = self
@@ -214,6 +218,14 @@ class ViewController: UIViewController, CustomSegmentedControlDelegate, LibraryV
         contentvc.bookTitle = readingBooks[content].title
         contentvc.modalPresentationStyle = .fullScreen
         present(contentvc, animated: true)
+    }
+    
+    func introduce(content: IndexPath) {
+        print(introduceIndex)
+        
+        introduceView.tableView.beginUpdates()
+        introduceView.tableView.reloadRows(at: introduceIndex, with: .none)
+        introduceView.tableView.endUpdates()
     }
     
     

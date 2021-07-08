@@ -7,8 +7,10 @@
 
 import UIKit
 
+public var introduceIndex: [IndexPath] = []
+
 protocol IntroduceBooksViewDelegate: AnyObject {
-    func introduce(content: Int)
+    func introduce(content: IndexPath)
 }
 
 class IntroduceBooksView: UIView {
@@ -16,6 +18,7 @@ class IntroduceBooksView: UIView {
     static let shared = IntroduceBooksView()
 
     weak var delegate: IntroduceBooksViewDelegate?
+   
 
     lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -66,8 +69,9 @@ extension IntroduceBooksView: UITableViewDataSource {
         cell.bookImage.image = allBooks[indexPath.row].image
         cell.titleLabel.text = allBooks[indexPath.row].title
         cell.writerLabel.text = allBooks[indexPath.row].writer
-        cell.introduceLabel.text = "민법은 어렵다...."
+        cell.introduceLabel.text = "민법은 어렵다민법은 어렵다민법은 어렵다민법은 어렵다민법은은은은은은은은은은 어렵다민법은 어렵다민법은 어렵다민법은 어렵다민법은 어렵다민법은 어렵다민법은 어렵다민법은 어렵다민법은 어렵다민법은 어렵다민법은 어렵다민법은 어렵다민법은 어렵다민법은 어렵다민법은 ...."
         
+      
         return cell
     }
 
@@ -76,11 +80,20 @@ extension IntroduceBooksView: UITableViewDataSource {
 
 extension IntroduceBooksView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if introduceIndex.contains(indexPath) {
+            introduceIndex.removeAll(where: { $0 == indexPath })
+        }
+        else {
+            introduceIndex.append(indexPath)
+        }
+        
         tableView.deselectRow(at: indexPath, animated: true)
-        delegate?.introduce(content: indexPath.row)
+        
+        delegate?.introduce(content: indexPath)
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        150
+        if introduceIndex.contains(indexPath) { return 300 }
+        return 150
     }
 }
