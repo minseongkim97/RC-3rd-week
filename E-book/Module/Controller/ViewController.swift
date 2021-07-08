@@ -41,6 +41,7 @@ public var clickedBook: String = ""
 //MARK: - Public Property
 var readingBooksView = ReadingBooksView.shared
 var allBooksView = CustomView.shared
+var introduceView = IntroduceBooksView.shared
 var libraryView = LibraryView.shared
 var eachLibraryView = EachLibraryView.shared
 public var categoryBook: [Book] = []
@@ -77,7 +78,7 @@ class ViewController: UIViewController, CustomSegmentedControlDelegate, LibraryV
         readingBooksView.delegate = self
         allBooksView.delegate = self
         
-        let codeSegmented = CustomSegmentedControl(frame: CGRect(x: 0, y: 110, width: self.view.frame.width, height: 50), buttonTitle: ["읽고 있는 책","책장","모든 책"])
+        let codeSegmented = CustomSegmentedControl(frame: CGRect(x: 0, y: 110, width: self.view.frame.width, height: 50), buttonTitle: ["읽고 있는 책","책장","모든 책", "책 소개글"])
         codeSegmented.delegate = self
         codeSegmented.backgroundColor = .clear
         view.addSubview(codeSegmented)
@@ -102,10 +103,11 @@ class ViewController: UIViewController, CustomSegmentedControlDelegate, LibraryV
                 if let text = field.text, !text.isEmpty {
                     allBooks.append(Book(image: UIImage(named: text) ?? UIImage(systemName: "book"), title: text, writer: writer[text] ?? "", category: []))
                     DispatchQueue.main.async {
-                        if viewIndex == 2 {
+                        if viewIndex == 2 || viewIndex == 3 {
                             self.numLabel.text = "보유한 책 \(allBooks.count)권"
                         }
                         allBooksView.tableView.reloadData()
+                        introduceView.tableView.reloadData()
                     }
                 }
             }
@@ -140,8 +142,9 @@ class ViewController: UIViewController, CustomSegmentedControlDelegate, LibraryV
     //MARK: - Function
     func moveVC(to category: String) {
         eachLibraryView.tableView.reloadData()
+        print(category)
         let eachLibraryvc = storyboard?.instantiateViewController(withIdentifier: "EachLibraryViewController") as! EachLibraryViewController
-        
+
         eachCategoryVCName = category
         eachLibraryvc.modalPresentationStyle = .fullScreen
         present(eachLibraryvc, animated: true)
@@ -244,7 +247,7 @@ class ViewController: UIViewController, CustomSegmentedControlDelegate, LibraryV
             libraryView.tableView.reloadData()
         }
         
-        else {
+        else if index == 2 {
             print(viewIndex)
         
             numLabel.text = "보유한 책 \(allBooks.count)권"
@@ -260,6 +263,24 @@ class ViewController: UIViewController, CustomSegmentedControlDelegate, LibraryV
             
             
             allBooksView.tableView.reloadData()
+        }
+        
+        else if index == 3 {
+            print(viewIndex)
+            numLabel.text = "보유한 책 \(allBooks.count)권"
+            
+            
+             viewToDisplay.addSubview(introduceView)
+            introduceView.translatesAutoresizingMaskIntoConstraints = false
+             NSLayoutConstraint.activate([
+                introduceView.topAnchor.constraint(equalTo: viewToDisplay.topAnchor),
+                introduceView.leadingAnchor.constraint(equalTo: viewToDisplay.leadingAnchor),
+                introduceView.trailingAnchor.constraint(equalTo: viewToDisplay.trailingAnchor),
+                introduceView.bottomAnchor.constraint(equalTo: viewToDisplay.bottomAnchor)
+             ])
+             
+             
+            introduceView.tableView.reloadData()
         }
     }
     
