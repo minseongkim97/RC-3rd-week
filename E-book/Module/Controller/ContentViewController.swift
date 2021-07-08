@@ -13,10 +13,15 @@ class ContentViewController: UIViewController{
     
 
     @IBOutlet weak var bookTitleLabel: UILabel!
+    @IBOutlet weak var contentLabel: UILabel!
+    var bookTitle: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        bookTitleLabel.text = bookTitle
+        contentLabel.text = bookContent[bookTitle]
+        bookTitleLabel.minimumScaleFactor = 0.5
+        bookTitleLabel.adjustsFontSizeToFitWidth = true
    
     }
     

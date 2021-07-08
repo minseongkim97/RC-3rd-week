@@ -15,7 +15,16 @@ class AllBooksView: UIView {
 
     
     static let shared = AllBooksView()
+    
     weak var delegate: AllBooksViewDelegate?
+    
+    lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.register(UINib(nibName: "BookTableViewCell", bundle: nil), forCellReuseIdentifier: "bookCell")
+        tableView.separatorStyle = .none
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        return tableView
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -29,13 +38,7 @@ class AllBooksView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    lazy var tableView: UITableView = {
-        let tableView = UITableView()
-        tableView.register(UINib(nibName: "BookTableViewCell", bundle: nil), forCellReuseIdentifier: "bookCell")
-        tableView.separatorStyle = .none
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        return tableView
-    }()
+
     
     func setupView() {
         self.addSubview(tableView)
