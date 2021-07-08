@@ -231,8 +231,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kIV-cJ-t9M">
-                                <rect key="frame" x="183.5" y="64" width="47" height="27.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kIV-cJ-t9M">
+                                <rect key="frame" x="57" y="64" width="300" height="27.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="ApB-Om-0JN"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -274,7 +277,6 @@
                             <constraint firstItem="jEg-cl-zQ8" firstAttribute="bottom" secondItem="al3-gb-30D" secondAttribute="bottom" id="HcL-RF-1wi"/>
                             <constraint firstItem="kIV-cJ-t9M" firstAttribute="centerX" secondItem="CnM-9y-8ll" secondAttribute="centerX" id="PLz-ts-Nsg"/>
                             <constraint firstItem="jEg-cl-zQ8" firstAttribute="top" secondItem="kIV-cJ-t9M" secondAttribute="bottom" constant="20" id="eQE-VF-C9a"/>
-                            <constraint firstItem="al3-gb-30D" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="kIV-cJ-t9M" secondAttribute="trailing" constant="20" id="hpA-YZ-KiJ"/>
                             <constraint firstItem="al3-gb-30D" firstAttribute="trailing" secondItem="jEg-cl-zQ8" secondAttribute="trailing" constant="20" id="ksx-Qc-9jh"/>
                             <constraint firstItem="GiU-go-blZ" firstAttribute="leading" secondItem="al3-gb-30D" secondAttribute="leading" constant="20" id="qWC-oV-4r8"/>
                             <constraint firstItem="GiU-go-blZ" firstAttribute="centerY" secondItem="kIV-cJ-t9M" secondAttribute="centerY" id="uRF-dZ-fZj"/>
@@ -288,7 +290,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lqc-ee-YDb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1016" y="814"/>
+            <point key="canvasLocation" x="1015.9420289855074" y="813.61607142857144"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aGo-pj-U0G">

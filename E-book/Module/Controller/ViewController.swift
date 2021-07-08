@@ -40,7 +40,7 @@ public var clickedBook: String = ""
 
 //MARK: - Public Property
 var readingBooksView = ReadingBooksView.shared
-var allBooksView = AllBooksView.shared
+var allBooksView = CustomView.shared
 var libraryView = LibraryView.shared
 var eachLibraryView = EachLibraryView.shared
 public var categoryBook: [Book] = []
@@ -59,7 +59,11 @@ class ViewController: UIViewController, CustomSegmentedControlDelegate, LibraryV
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        let screenRatio = self.viewToDisplay.frame.height / self.viewToDisplay.frame.width
+//        let allBooksView = CustomView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width * screenRatio))
+
         
+
         numLabel.text = "읽고 있는 책 \(readingBooks.count)권"
         viewToDisplay.addSubview(readingBooksView)
         NSLayoutConstraint.activate([
@@ -68,7 +72,7 @@ class ViewController: UIViewController, CustomSegmentedControlDelegate, LibraryV
             readingBooksView.trailingAnchor.constraint(equalTo: viewToDisplay.trailingAnchor),
             readingBooksView.bottomAnchor.constraint(equalTo: viewToDisplay.bottomAnchor)
         ])
-    
+
         libraryView.delegate = self
         readingBooksView.delegate = self
         allBooksView.delegate = self
@@ -87,6 +91,7 @@ class ViewController: UIViewController, CustomSegmentedControlDelegate, LibraryV
     
     //MARK: - Action
     @IBAction func addButtonPressed(_ sender: UIButton) {
+        
         let alert = UIAlertController(title: "책 추가", message: "책 제목을 정확히 입력해주세요", preferredStyle: .alert)
         alert.addTextField { field in
             field.placeholder = "책 제목 입력"
@@ -241,15 +246,19 @@ class ViewController: UIViewController, CustomSegmentedControlDelegate, LibraryV
         
         else {
             print(viewIndex)
+        
             numLabel.text = "보유한 책 \(allBooks.count)권"
+           
             viewToDisplay.addSubview(allBooksView)
+            allBooksView.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([
                 allBooksView.topAnchor.constraint(equalTo: viewToDisplay.topAnchor),
                 allBooksView.leadingAnchor.constraint(equalTo: viewToDisplay.leadingAnchor),
                 allBooksView.trailingAnchor.constraint(equalTo: viewToDisplay.trailingAnchor),
                 allBooksView.bottomAnchor.constraint(equalTo: viewToDisplay.bottomAnchor)
             ])
-
+            
+            
             allBooksView.tableView.reloadData()
         }
     }
