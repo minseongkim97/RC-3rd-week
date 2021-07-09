@@ -69,7 +69,7 @@ extension IntroduceBooksView: UITableViewDataSource {
         cell.bookImage.image = allBooks[indexPath.row].image
         cell.titleLabel.text = allBooks[indexPath.row].title
         cell.writerLabel.text = allBooks[indexPath.row].writer
-        cell.introduceLabel.text = "민법은 어렵다민법은 어렵다민법은 어렵다민법은 어렵다민법은은은은은은은은은은 어렵다민법은 어렵다민법은 어렵다민법은 어렵다민법은 어렵다민법은 어렵다민법은 어렵다민법은 어렵다민법은 어렵다민법은 어렵다민법은 어렵다민법은 어렵다민법은 어렵다민법은 어렵다민법은 ...."
+        cell.introduceLabel.text = allBooks[indexPath.row].introduce
         
       
         return cell
@@ -93,7 +93,9 @@ extension IntroduceBooksView: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if introduceIndex.contains(indexPath) { return 300 }
+        if introduceIndex.contains(indexPath) {
+            return 300
+        }
         return 150
     }
 }

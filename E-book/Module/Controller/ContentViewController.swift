@@ -19,7 +19,7 @@ class ContentViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         bookTitleLabel.text = bookTitle
-        contentLabel.text = bookContent[bookTitle]
+        contentLabel.text = data.bookContent[bookTitle]
         bookTitleLabel.minimumScaleFactor = 0.5
         bookTitleLabel.adjustsFontSizeToFitWidth = true
    
